@@ -23,7 +23,7 @@ function JobSiteModal({ isOpen, onRequestClose, addJobSite }) {
             overlayClassName="job-site-modal-overlay"
         >
             <h2>Title</h2>
-            <p>Informative piece of text that can be used regarding this modal.</p>
+            <p>Create your JobSite</p>
             <div className="modal-content">
                 <label>
                     Name

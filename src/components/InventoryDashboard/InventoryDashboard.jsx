@@ -1,39 +1,39 @@
-import React, { useState } from 'react';
-import Modal from 'react-modal';
+import React from 'react';
+import PropTypes from 'prop-types';
 import './InventoryDashboard.scss';
 
-function InventoryDashboard({ categories, updateCategory }) {
-    const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [currentCategory, setCurrentCategory] = useState(null);
-
-    const handleDoubleClick = (category) => {
-        setCurrentCategory(category);
-        setModalIsOpen(true);
-    };
-
-    const handleSave = () => {
-        updateCategory(currentCategory);
-        setModalIsOpen(false);
-    };
+function InventoryDashboard({ jobSite }) {
+    const categories = jobSite.categories || [];
 
     return (
         <div className="inventory-dashboard">
-            {categories.map((category) => (
-                <div key={category.id} onDoubleClick={() => handleDoubleClick(category)}>
-                    {category.name}
-                </div>
-            ))}
-            <Modal isOpen={modalIsOpen}>
-                <h2>Edit Category</h2>
-                <input
-                    type="text"
-                    value={currentCategory ? currentCategory.name : ''}
-                    onChange={(e) => setCurrentCategory({ ...currentCategory, name: e.target.value })}
-                />
-                <button onClick={handleSave} className="button">Save</button>
-            </Modal>
+            <h2>Categories</h2>
+            {categories.length > 0 ? (
+                categories.map((category, index) => (
+                    <div key={index} className="category">
+                        {category.name}
+                    </div>
+                ))
+            ) : (
+                <p>No categories available</p>
+            )}
         </div>
     );
 }
+
+InventoryDashboard.propTypes = {
+    jobSite: PropTypes.shape({
+        name: PropTypes.string,
+        categories: PropTypes.arrayOf(PropTypes.shape({
+            name: PropTypes.string
+        }))
+    })
+};
+
+InventoryDashboard.defaultProps = {
+    jobSite: {
+        categories: []
+    }
+};
 
 export default InventoryDashboard;

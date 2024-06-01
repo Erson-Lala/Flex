@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import InventoryDashboard from '../../components/InventoryDashboard';
 import './InventoryPage.scss';
 
-function InventoryPage({ match }) {
-    const { jobSiteId } = match.params;
+function InventoryPage() {
+    const { jobSiteId } = useParams();
     const [categories, setCategories] = useState([]);
 
     const updateCategory = (updatedCategory) => {

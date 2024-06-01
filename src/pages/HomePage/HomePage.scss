@@ -1,0 +1,31 @@
+.home-page {
+    .controls {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        .jobsite-form-container {
+            display: flex;
+            align-items: center;
+            .create-button {
+                background-color: #71cf48;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                padding: 10px 20px;
+                font-size: 20px;
+                margin-left: 10px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}

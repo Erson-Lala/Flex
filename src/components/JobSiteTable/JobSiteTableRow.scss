@@ -1,0 +1,25 @@
+.table-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 4px;
+    width: 100px;
+    color: white;
+    text-align: center;
+}
+
+.completed {
+    background-color: #28a745;
+}
+
+.on-hold {
+    background-color: #ffc107;
+}
+
+.on-hold {
+    background-color: #fe4c4a;
+}

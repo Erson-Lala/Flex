@@ -1,0 +1,36 @@
+.status-header {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.status-box {
+    margin: 0 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    flex: 1;
+    height: 50px;
+    max-width: 200px;
+    border: 2px solid #ddd;
+}
+
+.on-road {
+    background-color: #ffc107; 
+}
+
+.completed {
+    background-color: #28a745;
+}
+
+.on-hold {
+    background-color: #dc3545;
+}

@@ -26,7 +26,7 @@ function JobSiteForm({ addJobSite }) {
                 value={id}
                 onChange={(e) => setId(e.target.value)}
             />
-            <button type="submit" className="button">Create</button>
+            {/* Remove the create button here */}
         </form>
     );
 }

@@ -30,7 +30,6 @@ function InventoryPage() {
         <div className="inventory-page container">
             {jobSite ? (
                 <>
-                    <h1>Inventory for Job Site: {jobSite.name}</h1>
                     <InventoryDashboard jobSite={jobSite} />
                 </>
             ) : (

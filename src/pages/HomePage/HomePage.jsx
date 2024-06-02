@@ -60,7 +60,7 @@ function HomePage() {
                     onChange={(e) => setSearchQuery(e.target.value)}
                 />
                 <div className="jobsite-form-container">
-                    <button className="create-button" onClick={openModal}>Create</button>
+                    <button className="create-button" onClick={openModal}>Create +</button>
                 </div>
             </div>
             <JobSiteTable jobSites={filteredJobSites} />

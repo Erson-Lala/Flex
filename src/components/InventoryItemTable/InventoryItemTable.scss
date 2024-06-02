@@ -1,0 +1,33 @@
+.inventory-item-table {
+    width: 100%;
+    overflow-x: auto;
+    padding: 20px;
+    background-color: #ffff;
+
+
+    h3 {
+        margin-bottom: 10px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        tbody tr {
+            cursor: pointer;
+            &:hover {
+                background-color: #f1f1f1;
+            }
+        }
+    }
+}

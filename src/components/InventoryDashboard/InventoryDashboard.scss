@@ -1,13 +1,78 @@
 .inventory-dashboard {
-    div {
-        cursor: pointer;
-        padding: 10px;
-        border: 1px solid #ccc;
-        margin-bottom: 5px;
-        border-radius: 4px;
+    display: flex;
+    height: 100vh;
 
-        &:hover {
-            background-color: #f9f9f9;
+    .sidebar {
+        width: 300px;
+        background-color: #f9f9f9;
+        border-right: 1px solid #ddd;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        h2 {
+            margin-top: 0;
+        }
+
+        .service-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            button {
+                background: none;
+                border: none;
+                padding: 10px;
+                text-align: left;
+                cursor: pointer;
+                border-radius: 4px;
+
+                &:hover,
+                &.selected {
+                    background-color: #67aa3c;
+                    color: white;
+                }
+            }
+        }
+
+        .go-back {
+            background-color: #1264a3;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+                background-color: #0b4687;
+            }
+
+            .arrow {
+                margin-right: 5px;
+                padding-left: 20px;
+                font-size: 16px;
+            }
+        }
+    }
+
+    .data-grid {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .placeholder {
+            text-align: center;
+            color: #888;
+
+            p {
+                margin: 0;
+            }
         }
     }
 }

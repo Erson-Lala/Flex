@@ -24,6 +24,7 @@ function HomePage() {
         { id: 16, name: '654 Cypress St, Queens, NY 11385, USA', status: 'Completed' }
     ]);
 
+    const [searchQuery, setSearchQuery] = useState('');
     const [isModalOpen, setModalOpen] = useState(false);
 
     const addJobSite = (jobSite) => {
@@ -38,13 +39,19 @@ function HomePage() {
         setModalOpen(false);
     };
 
+    const updateStatus = (id, status) => {
+        const updatedJobSites = jobSites.map(site =>
+            site.id === id ? { ...site, status } : site
+        );
+        setJobSites(updatedJobSites);
+    };
+
     const statusCounts = {
         onRoad: jobSites.filter(site => site.status === 'On Road').length,
         completed: jobSites.filter(site => site.status === 'Completed').length,
         onHold: jobSites.filter(site => site.status === 'On Hold').length,
     };
 
-    const [searchQuery, setSearchQuery] = useState('');
     const filteredJobSites = jobSites.filter(site =>
         site.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
@@ -60,10 +67,10 @@ function HomePage() {
                     onChange={(e) => setSearchQuery(e.target.value)}
                 />
                 <div className="jobsite-form-container">
-                    <button className="create-button" onClick={openModal}>Create +</button>
+                    <button className="create-button" onClick={openModal}>Create</button>
                 </div>
             </div>
-            <JobSiteTable jobSites={filteredJobSites} />
+            <JobSiteTable jobSites={filteredJobSites} updateStatus={updateStatus} />
             <JobSiteModal isOpen={isModalOpen} onRequestClose={closeModal} addJobSite={addJobSite} />
         </div>
     );

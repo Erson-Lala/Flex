@@ -23,14 +23,14 @@
     max-width: 500px;
 }
 
-.on-road {
+.status-box.on-road {
     background-color: #ffc107; 
 }
 
-.completed {
+.status-box.completed {
     background-color: #28a745;
 }
 
-.on-hold {
+.status-box.on-hold {
     background-color: #dc3545;
 }

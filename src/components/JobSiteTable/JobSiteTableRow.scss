@@ -5,21 +5,65 @@
 }
 
 .status {
+    position: relative;
     padding: 5px 10px;
     border-radius: 4px;
     width: 100px;
     color: white;
     text-align: center;
+    cursor: pointer;
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 50%;
+            transform: translateX(-49%);
+            background-color: white !important;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            width: 120px;
+            border-radius: 8px;
+            overflow: hidden;
+
+            div {
+                padding: 10px;
+                cursor: pointer;
+                color: black;
+                background-color: white;
+
+                &:hover {
+                    color: white;
+                }
+
+                &.completed:hover {
+                    background-color: #28a745;
+                }
+
+                &.on-road:hover {
+                    background-color: #ffc107;
+                }
+
+                &.on-hold:hover {
+                    background-color: #fe4c4a;
+                }
+            }
+        }
+    }
 }
 
-.completed {
+.table-row .completed {
     background-color: #28a745;
 }
 
-.on-hold {
+.table-row .on-road {
     background-color: #ffc107;
 }
 
-.on-hold {
+.table-row .on-hold {
     background-color: #fe4c4a;
 }

@@ -1,21 +1,25 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import JobSiteTableRow from './JobSiteTableRow';
 import './JobSiteTable.scss';
 
-function JobSiteTable({ jobSites }) {
+function JobSiteTable({ jobSites, updateStatus }) {
     return (
         <div className="job-site-table">
-            <div className="table-header">
-                <div>Jobsite Name</div>
-                <div>Status</div>
-            </div>
-            <div className="table-body">
-                {jobSites.map((site, index) => (
-                    <JobSiteTableRow key={index} site={site} />
-                ))}
-            </div>
+            {jobSites.map((site) => (
+                <JobSiteTableRow key={site.id} site={site} updateStatus={updateStatus} />
+            ))}
         </div>
     );
 }
+
+JobSiteTable.propTypes = {
+    jobSites: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number,
+        name: PropTypes.string,
+        status: PropTypes.string
+    })).isRequired,
+    updateStatus: PropTypes.func.isRequired
+};
 
 export default JobSiteTable;

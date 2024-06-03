@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import './JobSiteModal.scss';
 
-Modal.setAppElement('#root');
+// Modal.setAppElement('#root');
 
 function JobSiteModal({ isOpen, onRequestClose, addJobSite }) {
     const [name, setName] = React.useState('');

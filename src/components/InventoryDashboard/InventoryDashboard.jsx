@@ -15,7 +15,11 @@ function InventoryDashboard({ jobSite }) {
             { id: 3, name: 'M94796', quantity: 31, description: 'Lorem ipsum dolor sit amet', notes: 'Lorem ipsum dolor sit amet' },
             { id: 4, name: 'S25907', quantity: 47, description: 'Lorem ipsum dolor sit amet', notes: 'Lorem ipsum dolor sit amet' },
         ] },
-        { id: 2, name: 'Scaffold', items: [] }
+        { id: 2, name: 'Scaffold', items: [] },
+        { id: 3, name: 'Shoring', items: [
+            { id: 1, name: 'S12345', quantity: 50, description: 'Shoring equipment item 1', notes: 'Notes for item 1' },
+            { id: 2, name: 'S67890', quantity: 20, description: 'Shoring equipment item 2', notes: 'Notes for item 2' }
+        ]}
     ];
 
     const handleServiceClick = (service) => {
